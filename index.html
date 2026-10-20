@@ -95,7 +95,7 @@ section:focus{outline:none}
 /* Stany startowe animacji (tylko gdy JS działa) */
 .js .reveal{visibility:hidden}
 .js .g-media{clip-path:inset(0 0 100% 0)}
-.js .noc-time,.js .noc-title{visibility:hidden}
+.js .noc-time{visibility:hidden}
 .js .hero-expo{visibility:hidden}
 /* Widok zapasowy (gdy biblioteki animacji się nie wczytają) */
 .static .noc-aside{display:none}
@@ -222,7 +222,6 @@ html.intro body{overflow:hidden}
 .noc-panel:nth-child(even){width:78%;margin-left:auto}
 .noc-time{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;color:var(--magenta)}
 .noc-time::before{content:"";width:22px;height:1px;background:currentColor}
-.noc-title{position:absolute;left:18px;bottom:-.42em;z-index:5;font-family:'Anton',sans-serif;font-size:clamp(34px,4.6vw,76px);line-height:.9;text-transform:uppercase;color:var(--paper);text-shadow:0 8px 30px rgba(0,0,0,.65);pointer-events:none;transition:color .4s var(--ease)}
 
 /* ---------- WIZJER (środek) ---------- */
 .wizjer-seq{position:relative;width:100%;overflow:hidden;padding:10vh 0}
@@ -258,7 +257,6 @@ html.intro body{overflow:hidden}
   .roc-item:hover{border-color:rgba(211,164,102,.4);background:rgba(211,164,102,.08);box-shadow:0 20px 60px -15px rgba(211,164,102,.35)}
   .roc-item:hover .g-par img{transform:scale(1.04)}
   .noc-panel:hover .g-par img{transform:scale(1.045)}
-  .noc-panel:hover .noc-title{color:var(--magenta)}
 }
 
 /* ---------- O MNIE ---------- */
@@ -321,7 +319,6 @@ html.intro body{overflow:hidden}
   .noc-panel:nth-child(n){width:auto;margin-left:0}
   .noc-panel:nth-child(even){margin-left:8vw}
   .noc-panel:nth-child(odd){margin-right:8vw}
-  .noc-title{font-size:30px;left:12px}
 
   .grid{grid-template-columns:1fr;gap:56px}
   #rocznice .roc-item:nth-child(n){grid-column:auto;margin-top:0}
@@ -519,10 +516,10 @@ const KONTAKT = {
 
 // Godziny w "tag" (GG:MM, po kolei) sterują zegarem nocy.
 const IMPREZY = [
-  { file: '01.jpg', tag: '22:30', title: 'Początek' },
-  { file: '02.jpg', tag: '23:45', title: 'Parkiet' },
-  { file: '03.jpg', tag: '01:15', title: 'Energia' },
-  { file: '04.jpg', tag: '03:00', title: 'Finał' }
+  { file: '01.jpg', tag: '22:30' },
+  { file: '02.jpg', tag: '23:45' },
+  { file: '03.jpg', tag: '01:15' },
+  { file: '04.jpg', tag: '03:00' }
 ];
 
 const ROCZNICE = [
@@ -553,10 +550,9 @@ function mediaHTML(src, alt, extra){
 }
 
 q('#grid-imprezy').innerHTML = IMPREZY.map(it => `
-  <a href="assets/imprezy/${it.file}" class="noc-panel glightbox" data-gallery="galeria-imprezy" data-title="${esc(it.tag + ' — ' + it.title)}">
+  <a href="assets/imprezy/${it.file}" class="noc-panel glightbox" data-gallery="galeria-imprezy" data-title="${esc(it.tag)}">
     <span class="noc-time">${esc(it.tag)}</span>
-    ${mediaHTML('assets/imprezy/' + it.file, 'Impreza, ' + it.tag + ' — ' + it.title)}
-    <span class="noc-title">${esc(it.title)}</span>
+    ${mediaHTML('assets/imprezy/' + it.file, 'Impreza, ' + it.tag)}
   </a>`).join('');
 
 q('#grid-rocznice').innerHTML = ROCZNICE.map(it => `
@@ -735,7 +731,7 @@ function shutter(item, o){
 
   if(RM) return;
   panels.forEach(p => {
-    shutter(p, { dur: .8, ease: 'power3.inOut', extra: [q('.noc-time', p), q('.noc-title', p)], st: { trigger: p, start: 'top 82%' } });
+    shutter(p, { dur: .8, ease: 'power3.inOut', extra: [q('.noc-time', p)], st: { trigger: p, start: 'top 82%' } });
     gsap.fromTo(q('.g-par', p), { yPercent: -6 }, { yPercent: 6, ease: 'none',
       scrollTrigger: { trigger: p, start: 'top bottom', end: 'bottom top', scrub: true } });
   });
