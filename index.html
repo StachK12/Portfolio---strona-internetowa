@@ -468,7 +468,7 @@ html.intro body{overflow:hidden}
   </div>
   <div class="about-wrap">
     <div class="about-img g-media">
-      <div class="g-par"><img src="assets/portret.jpg" alt="Stanisław Knul" loading="lazy" decoding="async"></div>
+      <div class="g-par"><img src="assets/portret.jpg" alt="Stanisław Knul" loading="lazy" decoding="async" onerror="var w=this.closest('.about-wrap');this.closest('.about-img').remove();w.style.gridTemplateColumns='1fr'"></div>
       <span class="g-slit"></span>
     </div>
     <div class="about-copy">
@@ -831,9 +831,11 @@ if(!RM){
 
   // Portret
   const about = q('.about-img');
-  shutter(about, { dur: 1.3, ease: 'power2.inOut', st: { trigger: about, start: 'top 80%' } });
-  gsap.fromTo(q('.g-par', about), { yPercent: -6 }, { yPercent: 6, ease: 'none',
-    scrollTrigger: { trigger: about, start: 'top bottom', end: 'bottom top', scrub: true } });
+  if(about){
+    shutter(about, { dur: 1.3, ease: 'power2.inOut', st: { trigger: about, start: 'top 80%' } });
+    gsap.fromTo(q('.g-par', about), { yPercent: -6 }, { yPercent: 6, ease: 'none',
+      scrollTrigger: { trigger: about, start: 'top bottom', end: 'bottom top', scrub: true } });
+  }
 
   // Kontakt: pojawia się zawsze, także po kliknięciu „Kontakt” w menu
   const fnTitle = q('.fn-title'), fnRest = qa('.finale-seq .section-eyebrow, .fn-bottom');
