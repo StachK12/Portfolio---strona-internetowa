@@ -11,15 +11,6 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-# Zdjęcia: długi cache (po podmianie pliku zmień jego nazwę albo poczekaj do wygaśnięcia)
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=604800"
-
-# HTML zawsze świeży — zmiany widać od razu po wdrożeniu
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+# Cache zostawiamy domyślnym ustawieniom Netlify (max-age=0 + ETag): CDN i tak serwuje pliki
+# szybko, a podmienione zdjęcia i nowa wersja strony są widoczne od razu po wdrożeniu.
 
