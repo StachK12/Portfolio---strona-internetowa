@@ -1,0 +1,25 @@
+# Statyczna strona — bez kroku budowania, publikujemy katalog główny repozytorium.
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Zdjęcia: długi cache (po podmianie pliku zmień jego nazwę albo poczekaj do wygaśnięcia)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# HTML zawsze świeży — zmiany widać od razu po wdrożeniu
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+

@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stanisław Knul — Fotografia imprez, rocznic i jubileuszy · Łódź</title>
+<meta name="description" content="Stanisław Knul — fotografia imprez, rocznic i jubileuszy. Reportaż bez pozowania. Łódź i całe województwo łódzkie.">
+<meta name="theme-color" content="#0c0a09">
+
+<link rel="canonical" href="https://stanislaw-knul.netlify.app/">
+
+<!-- Podgląd linku na Facebooku / Messengerze / WhatsAppie.
+     Wrzuć assets/og.jpg (1200×630 px, Twój najlepszy kadr). Jeśli zmienisz domenę, podmień adres w canonical, og:* i JSON-LD. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Stanisław Knul — Fotografia">
+<meta property="og:description" content="Imprezy, rocznice i jubileusze. Reportaż bez pozowania — Łódź i województwo łódzkie.">
+<meta property="og:image" content="https://stanislaw-knul.netlify.app/assets/og.jpg">
+<meta property="og:url" content="https://stanislaw-knul.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+
+<!-- Ikonka w karcie przeglądarki: wizjer z punktem ostrości -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c0a09'/%3E%3Cpath d='M14 25V14h11M39 14h11v11M50 39v11H39M25 50H14V39' fill='none' stroke='%23f4efe6' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23d4489f'/%3E%3C/svg%3E">
+
+<!-- Dane dla Google (wizytówka lokalna) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Stanisław Knul — Fotografia","description":"Fotografia imprez, rocznic i jubileuszy. Reportaż bez pozowania.","telephone":"+48535832217","areaServed":"województwo łódzkie","address":{"@type":"PostalAddress","addressLocality":"Łódź","addressCountry":"PL"},"url":"https://stanislaw-knul.netlify.app/"}
+</script>
+
+<!-- Ustala stan startowy zanim cokolwiek się narysuje (intro tylko raz na wizytę) -->
+<script>
+(function(h){
+  h.classList.add('js');
+  try{
+    if(!sessionStorage.getItem('sk-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      h.classList.add('intro');
+      if('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    }
+  }catch(e){}
+  // Bezpiecznik: gdyby skrypty się nie wczytały, po 12 s pokaż stronę bez animacji
+  setTimeout(function(){ if(!window.__skReady){ h.classList.remove('js','intro'); h.classList.add('static'); } }, 12000);
+})(document.documentElement);
+</script>
+
+<link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
+
+<style>
+/* Lenis (płynne przewijanie) */
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+</style>
+
+<style>
+:root{
+  --void:#0c0a09; --void-2:#161310; --paper:#f4efe6; --paper-dim:#b6b0a2;
+  --muted:#7d766a; --line:rgba(244,239,230,.11);
+  --magenta:#d4489f; --magenta-dim:#8a3068;
+  --gold:#d3a466; --gold-dim:#8a6a3f;
+  --ease:cubic-bezier(.19,.85,.24,1);
+  --gut:4.5vw;
+}
+*{box-sizing:border-box}
+html{scrollbar-gutter:stable}
+
+body{
+  margin:0;
+  background:var(--void);
+  color:var(--paper);
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  transition:background-color 1.2s var(--ease);
+}
+body[data-theme="imprezy"]{background-color:#140a11}
+body[data-theme="rocznice"]{background-color:#141009}
+
+a{color:inherit;text-decoration:none}
+button{font:inherit;background:none;border:0;color:inherit;cursor:pointer;padding:0}
+img{max-width:100%;display:block}
+.mono{font-family:'IBM Plex Mono',monospace}
+::selection{background:var(--paper);color:var(--void)}
+a:focus-visible,button:focus-visible{outline:1.5px solid var(--paper-dim);outline-offset:4px}
+section:focus{outline:none}
+
+/* Stany startowe animacji (tylko gdy JS działa) */
+.js .reveal{visibility:hidden}
+.js .g-media{clip-path:inset(0 0 100% 0)}
+.js .noc-time,.js .noc-title{visibility:hidden}
+.js .hero-expo{visibility:hidden}
+/* Widok zapasowy (gdy biblioteki animacji się nie wczytają) */
+.static .noc-aside{display:none}
+.static .noc{grid-template-columns:1fr}
+/* Pomocnicze klasy dla animacji liter/słów (istnieją tylko w trakcie animacji) */
+.sw,.swd,.sc{display:inline-block}
+.sl{display:block}
+.sw{clip-path:inset(-.4em -.14em -.34em -.14em)}
+.sl{clip-path:inset(-.32em -.3em -.3em -.3em)}
+
+/* ===================== INTRO: wizjer → ostrość → błysk ===================== */
+#intro{position:fixed;inset:0;z-index:10000;display:none;color:var(--paper);font-family:'IBM Plex Mono',monospace;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,#17110f 0%,#070605 72%)}
+html.intro #intro{display:block}
+html.intro body{overflow:hidden}
+.in-top{position:absolute;top:26px;left:var(--gut);font-weight:500;font-size:12.5px;letter-spacing:.1em;visibility:hidden}
+.in-box{position:absolute;inset:0;margin:auto;width:min(72vw,1100px);height:min(62vh,680px);visibility:hidden}
+.in-c{position:absolute;width:46px;height:46px;border:1.5px solid rgba(244,239,230,.8);transition:border-color .25s,box-shadow .25s}
+.in-tl{left:0;top:0;border-right:0;border-bottom:0}
+.in-tr{right:0;top:0;border-left:0;border-bottom:0}
+.in-bl{left:0;bottom:0;border-right:0;border-top:0}
+.in-br{right:0;bottom:0;border-left:0;border-top:0}
+.in-af{position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border:1.5px solid rgba(244,239,230,.55);transition:all .25s}
+.in-box.lock .in-c{border-color:var(--magenta);box-shadow:0 0 14px rgba(212,72,159,.45)}
+.in-box.lock .in-af{border-color:var(--magenta);background:rgba(212,72,159,.25);box-shadow:0 0 18px 4px rgba(212,72,159,.6)}
+.in-hud{position:absolute;left:0;right:0;bottom:7vh;display:flex;justify-content:center;align-items:flex-end;gap:34px;font-size:12px;letter-spacing:.08em;color:var(--paper-dim);visibility:hidden}
+.in-meter{position:relative;width:240px;padding-top:16px}
+.in-scale span{position:absolute;top:0;transform:translateX(-50%);font-size:10px;color:var(--muted)}
+.in-ticks{position:relative;height:9px;border-right:1px solid rgba(244,239,230,.45);
+  background:repeating-linear-gradient(90deg,rgba(244,239,230,.45) 0 1px,transparent 1px 20px)}
+.in-needle{position:absolute;top:-5px;left:0;width:2px;height:19px;margin-left:-1px;background:var(--paper);transition:background .2s,box-shadow .2s}
+.in-needle.lock{background:var(--magenta);box-shadow:0 0 10px var(--magenta)}
+.in-flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none}
+
+/* ===================== NAV ===================== */
+.nav{position:fixed;z-index:100;left:0;right:0;top:0;padding:26px var(--gut);display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff}
+.logo{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12.5px;letter-spacing:.1em}
+.navlinks{display:flex;gap:30px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.navlinks a{position:relative}
+.navlinks a:after{content:"";position:absolute;left:0;bottom:-7px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.navlinks a:hover:after{transform:scaleX(1);transform-origin:left}
+
+/* Kinowe cięcie przy nawigacji */
+.curtain{position:fixed;inset:0;background:var(--void);z-index:9500;pointer-events:none;opacity:0;visibility:hidden}
+
+/* Ziarno filmowe */
+.grain{position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px;animation:grain .9s steps(1) infinite}
+@keyframes grain{0%{background-position:0 0}20%{background-position:-60px 40px}40%{background-position:50px -70px}60%{background-position:-90px -20px}80%{background-position:30px 90px}}
+
+/* ===================== HERO ===================== */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-move{position:absolute;inset:-2.5%}
+.hero-expo{position:absolute;inset:0}
+.hero-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.76) saturate(1.05)}
+.hero-frame.burst{visibility:hidden;opacity:0}
+.hero-blink{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,9,.3) 0%,rgba(12,10,9,.12) 35%,rgba(12,10,9,.92) 92%)}
+.hero-hud{position:absolute;z-index:3;top:76px;right:var(--gut);display:flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--paper);opacity:0;visibility:hidden}
+.hero-hud i{width:7px;height:7px;border-radius:50%;background:var(--magenta);box-shadow:0 0 10px var(--magenta)}
+.hero-inner{position:relative;z-index:2;padding:0 var(--gut) 8vh;width:100%}
+.hero-kicker{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim);margin-bottom:26px;display:flex;align-items:center;gap:10px}
+.hero-kicker i{width:26px;height:1px;background:var(--paper-dim);display:block}
+.hero-title{margin:0;line-height:.86}
+.hero-title .line-a{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(52px,10vw,150px);letter-spacing:-.01em;text-transform:uppercase;display:block;color:var(--paper)}
+.hero-title .line-b{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(38px,7vw,105px);letter-spacing:-.01em;display:block;color:var(--paper-dim);margin-top:.08em}
+.hero-sub{max-width:480px;color:var(--paper-dim);font-size:16.5px;line-height:1.7;margin:34px 0 0}
+.hero-ctas{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap}
+.hero-cta{display:inline-flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;border:1px solid var(--line);transition:border-color .35s var(--ease),background .35s var(--ease)}
+.hero-cta:hover{border-color:var(--paper-dim);background:rgba(244,239,230,.04)}
+.hero-meta-bottom{position:absolute;right:var(--gut);bottom:8vh;z-index:2;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:.08em}
+
+/* ===================== SEKCJE ===================== */
+.site{position:relative;z-index:1}
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.ambient-layer{position:absolute;inset:-20%;opacity:0;transition:opacity 1.5s var(--ease);mix-blend-mode:screen}
+.ambient-layer.is-active{opacity:1}
+.ambient-layer.imprezy{background:radial-gradient(ellipse 60% 50% at 28% 15%,rgba(212,72,159,.22),transparent 65%),radial-gradient(ellipse 50% 40% at 85% 70%,rgba(196,52,143,.12),transparent 70%)}
+.ambient-layer.rocznice{background:radial-gradient(ellipse 55% 50% at 75% 20%,rgba(211,164,102,.25),transparent 65%),radial-gradient(ellipse 50% 40% at 15% 75%,rgba(201,154,91,.15),transparent 70%)}
+
+.section{padding:150px var(--gut);position:relative}
+.section-top{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid var(--line);padding-top:16px;margin-bottom:60px;gap:20px;flex-wrap:wrap}
+.section-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center}
+.section-eyebrow::before{content:"";display:block;width:6px;height:6px;border-radius:50%;margin-right:12px;background:var(--muted);box-shadow:0 0 10px rgba(125,118,106,.3)}
+.section-intro{max-width:720px;font-size:clamp(18px,2vw,24px);line-height:1.55;color:var(--paper-dim);margin:0 0 100px;font-weight:300}
+
+#imprezy .section-top{border-top-color:rgba(212,72,159,.25)}
+#imprezy .section-top h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(46px,7.5vw,110px);letter-spacing:-.005em;line-height:.86;margin:0;color:var(--paper)}
+#imprezy .section-eyebrow{color:var(--magenta)}
+#imprezy .section-eyebrow::before{background:var(--magenta);box-shadow:0 0 12px 2px rgba(212,72,159,.6)}
+
+#rocznice .section-top{border-top-color:rgba(211,164,102,.3)}
+#rocznice .section-top h2{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(38px,6vw,86px);letter-spacing:-.01em;line-height:.98;margin:0;color:var(--paper)}
+#rocznice .section-eyebrow{color:var(--gold)}
+#rocznice .section-eyebrow::before{background:var(--gold);box-shadow:0 0 12px 2px rgba(211,164,102,.6)}
+
+/* ---------- Wspólne: zdjęcie z migawką ---------- */
+.g-media{position:relative;overflow:hidden;border-radius:3px;aspect-ratio:3/2;background:var(--void-2)}
+.g-par{position:absolute;left:0;right:0;top:-7%;height:114%}
+.g-par img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.g-slit{position:absolute;left:-2%;right:-2%;top:0;height:2px;transform:translateY(-100%);z-index:4;pointer-events:none;opacity:0;
+  background:var(--slit,#fff);box-shadow:0 0 22px 4px var(--slit-glow,rgba(255,255,255,.6))}
+
+/* ---------- IMPREZY: noc na osi czasu (zwykłe przewijanie w dół) ---------- */
+.noc{position:relative;display:grid;grid-template-columns:minmax(230px,24%) 1fr;gap:0 5vw;--slit:#ff8fd0;--slit-glow:rgba(212,72,159,.85)}
+.noc-aside{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;gap:6vh;z-index:3;pointer-events:none}
+.noc-clock{display:flex;font-family:'Anton',sans-serif;font-size:clamp(56px,7.4vw,124px);line-height:.8;color:var(--paper);
+  text-shadow:0 0 50px rgba(212,72,159,.45);transition:color .5s var(--ease),text-shadow .5s var(--ease)}
+.noc-clock .d{display:inline-block;width:.5em;text-align:center}
+.noc-clock .c{display:inline-block;width:.24em;text-align:center;transform:translateY(-.04em)}
+.noc-clock.hit{color:var(--magenta);text-shadow:0 0 60px rgba(212,72,159,.9);transition-duration:.08s}
+.noc-ruler{position:relative;height:40vh;margin-left:5px}
+.noc-ruler .line{position:absolute;left:0;top:0;bottom:0;width:1px;background:rgba(244,239,230,.18)}
+.noc-ruler .fill{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--magenta);box-shadow:0 0 10px var(--magenta);transform:scaleY(var(--k,0));transform-origin:top}
+.noc-ruler .hr{position:absolute;left:0;top:calc(var(--at) * 100%);transform:translateY(-50%);padding-left:18px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:var(--muted)}
+.noc-ruler .hr::before{content:"";position:absolute;left:0;top:50%;width:8px;height:1px;background:rgba(244,239,230,.35)}
+.noc-ruler .mark{position:absolute;left:0;top:calc(var(--at) * 100%);width:8px;height:8px;margin:-4px 0 0 -3.5px;transform:rotate(45deg);border:1px solid var(--magenta);background:var(--void);transition:background .3s}
+.noc-ruler .mark.on{background:var(--magenta)}
+.noc-ruler .head{position:absolute;left:0;top:calc(var(--k,0) * 100%);width:11px;height:11px;margin:-5.5px 0 0 -5px;border-radius:50%;background:var(--paper);box-shadow:0 0 14px 3px rgba(212,72,159,.8)}
+.noc-list{position:relative;z-index:1;display:flex;flex-direction:column;gap:16vh;padding:6vh 0 4vh}
+.noc-panel{position:relative;display:block;width:100%}
+.noc-panel:nth-child(even){width:78%;margin-left:auto}
+.noc-time{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;color:var(--magenta)}
+.noc-time::before{content:"";width:22px;height:1px;background:currentColor}
+.noc-title{position:absolute;left:18px;bottom:-.42em;z-index:5;font-family:'Anton',sans-serif;font-size:clamp(34px,4.6vw,76px);line-height:.9;text-transform:uppercase;color:var(--paper);text-shadow:0 8px 30px rgba(0,0,0,.65);pointer-events:none;transition:color .4s var(--ease)}
+
+/* ---------- WIZJER (środek) ---------- */
+.wizjer-seq{position:relative;width:100%;overflow:hidden;padding:10vh 0}
+.ws-container{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;perspective:1000px}
+.ws-visual{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:65vw;max-width:1000px;aspect-ratio:3/2;z-index:2;will-change:transform,opacity}
+.ws-frame{position:relative;width:100%;height:100%;padding:12px;background:rgba(212,72,159,.02);border:1px solid rgba(212,72,159,.15);border-radius:4px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.9)}
+.ws-img{position:absolute;top:12px;left:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:cover;border-radius:2px}
+.ws-frame::after{content:"";position:absolute;inset:12px;pointer-events:none;box-shadow:inset 0 0 80px 20px rgba(12,10,9,.9);z-index:2}
+.ws-img-2{opacity:0}
+.ws-texts{position:absolute;inset:0;z-index:5;pointer-events:none}
+.ws-text{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Fraunces',serif;font-style:italic;font-size:clamp(32px,5vw,64px);text-align:center;color:var(--paper);text-shadow:0 10px 40px rgba(0,0,0,1);opacity:0;width:90vw;line-height:1.2}
+.ws-bracket{position:absolute;width:60px;height:60px;border:2px solid rgba(212,72,159,.5);pointer-events:none;z-index:4}
+.ws-tl{top:24px;left:24px;border-right:none;border-bottom:none}
+.ws-tr{top:24px;right:24px;border-left:none;border-bottom:none}
+.ws-bl{bottom:24px;left:24px;border-right:none;border-top:none}
+.ws-br{bottom:24px;right:24px;border-left:none;border-top:none}
+
+/* ---------- ROCZNICE ---------- */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.roc-item{position:relative;display:block;padding:10px;border:1px solid rgba(211,164,102,.14);border-radius:4px;background:rgba(211,164,102,.03);
+  --slit:#ffe2b8;--slit-glow:rgba(211,164,102,.85);transition:border-color .8s var(--ease),box-shadow .8s var(--ease),background .8s var(--ease)}
+.roc-item .g-media::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(transparent,rgba(12,10,9,.6));pointer-events:none;z-index:1}
+.g-tag{position:absolute;z-index:2;left:18px;top:16px;padding:6px 12px;background:rgba(12,10,9,.6);color:var(--gold);border:1px solid rgba(211,164,102,.35);font-family:'Fraunces',serif;font-style:italic;font-size:13px;letter-spacing:.02em}
+.g-title{position:absolute;z-index:2;left:18px;right:18px;bottom:16px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 2px 14px rgba(0,0,0,.6);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+#rocznice .roc-item:nth-child(1){grid-column:3 / span 10}
+#rocznice .roc-item:nth-child(2){grid-column:1 / span 9;margin-top:12vw}
+#rocznice .roc-item:nth-child(3){grid-column:4 / span 8;margin-top:10vw}
+#rocznice .roc-item:nth-child(4){grid-column:2 / span 9;margin-top:12vw}
+
+@media (hover:hover){
+  .roc-item .g-title{opacity:0;transform:translateY(8px)}
+  .roc-item:hover .g-title{opacity:1;transform:none}
+  .roc-item:hover{border-color:rgba(211,164,102,.4);background:rgba(211,164,102,.08);box-shadow:0 20px 60px -15px rgba(211,164,102,.35)}
+  .roc-item:hover .g-par img{transform:scale(1.04)}
+  .noc-panel:hover .g-par img{transform:scale(1.045)}
+  .noc-panel:hover .noc-title{color:var(--magenta)}
+}
+
+/* ---------- O MNIE ---------- */
+.about-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:center}
+.about-img.g-media{aspect-ratio:4/5;border-radius:4px;--slit:#fff6ea;--slit-glow:rgba(244,239,230,.6)}
+.about-img img{filter:grayscale(10%) brightness(.95)}
+.about-copy p{font-size:17px;line-height:1.8;color:var(--paper-dim);max-width:52ch;margin:0 0 24px}
+.about-copy p:first-child{color:var(--paper);font-size:19px}
+
+/* ---------- KONTAKT ---------- */
+.finale-seq{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:16vh 0;overflow:hidden;background:var(--void);border-top:1px solid var(--line)}
+.fn-wrapper{width:85vw;max-width:1100px}
+.fn-title{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(48px,8.5vw,130px);line-height:.86;letter-spacing:-.005em;margin:20px 0 0;color:var(--paper)}
+.fn-title em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--gold);font-size:.75em}
+.fn-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-top:60px;padding-top:24px;border-top:1px solid var(--line)}
+.fn-phone{display:inline-block;font-family:'Anton',sans-serif;font-size:clamp(36px,5.2vw,74px);line-height:1;letter-spacing:.01em;color:var(--paper);transition:color .3s var(--ease);will-change:transform}
+.fn-phone:hover{color:var(--gold)}
+.fn-links{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:clamp(14px,1.6vw,17px)}
+.fn-links a,.fn-links button{position:relative;color:var(--paper-dim);transition:color .3s var(--ease)}
+.fn-links a:hover,.fn-links button:hover{color:var(--gold)}
+.fn-toast{position:fixed;left:50%;bottom:32px;z-index:9600;transform:translate(-50%,20px);padding:12px 18px;background:var(--paper);color:var(--void);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;border-radius:2px;opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.fn-toast.show{opacity:1;transform:translate(-50%,0)}
+
+.footer{border-top:1px solid var(--line);padding:24px var(--gut) 30px;color:var(--muted);font-size:10.5px;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em}
+
+/* GLightbox */
+.glightbox-clean .gslide-description{background:transparent!important}
+.glightbox-clean .gdesc-inner{padding:15px 0 0!important}
+.glightbox-clean .gslide-title{color:rgba(255,255,255,.85)!important;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.glightbox-clean .gslide-media{box-shadow:0 10px 40px rgba(0,0,0,.6)}
+
+/* ===================== TELEFON ===================== */
+@media (max-width:800px){
+  :root{--gut:5vw}
+  .nav{padding:18px var(--gut);flex-direction:column;align-items:flex-start;gap:10px;mix-blend-mode:normal;background:linear-gradient(180deg,rgba(12,10,9,.85),transparent)}
+  .logo,.in-top{font-size:11px}
+  .in-top{top:18px}
+  .navlinks{gap:14px;font-size:9.5px;flex-wrap:wrap}
+  .section{padding:100px var(--gut)}
+  .section-intro{margin-bottom:60px}
+  .hero-meta-bottom{display:none}
+  .hero-hud{top:92px}
+  .in-c{width:28px;height:28px}
+  .in-hud{gap:16px;font-size:10.5px}
+  .in-meter{width:170px}
+  .in-ticks{background:repeating-linear-gradient(90deg,rgba(244,239,230,.45) 0 1px,transparent 1px calc(170px / 12))}
+
+  .noc{grid-template-columns:1fr}
+  .noc-aside{top:0;height:auto;flex-direction:row;align-items:center;gap:16px;margin:-60px calc(-1 * var(--gut)) 0;padding:82px var(--gut) 18px;
+    background:linear-gradient(180deg,rgba(20,10,17,.97) 82%,rgba(20,10,17,0))}
+  .noc-clock{font-size:40px}
+  .noc-ruler{flex:1;height:24px;margin:0 12px 0 14px}
+  .noc-ruler .line{right:0;bottom:auto;width:auto;height:1px}
+  .noc-ruler .fill{right:0;bottom:auto;width:auto;height:1px;transform:scaleX(var(--k,0));transform-origin:left}
+  .noc-ruler .hr{top:0;left:calc(var(--at) * 100%);transform:translateX(-50%);padding:10px 0 0;font-size:9px}
+  .noc-ruler .hr::before{left:50%;top:0;width:1px;height:6px}
+  .noc-ruler .mark{top:0;left:calc(var(--at) * 100%);margin:-4px 0 0 -4px}
+  .noc-ruler .head{top:0;left:calc(var(--k,0) * 100%);margin:-5.5px 0 0 -5.5px}
+  .noc-list{gap:11vh;padding-top:4vh}
+  .noc-panel:nth-child(n){width:auto;margin-left:0}
+  .noc-panel:nth-child(even){margin-left:8vw}
+  .noc-panel:nth-child(odd){margin-right:8vw}
+  .noc-title{font-size:30px;left:12px}
+
+  .grid{grid-template-columns:1fr;gap:56px}
+  #rocznice .roc-item:nth-child(n){grid-column:auto;margin-top:0}
+  #rocznice .roc-item:nth-child(even){margin-left:8vw}
+  #rocznice .roc-item:nth-child(odd){margin-right:8vw}
+
+  .about-wrap{grid-template-columns:1fr;gap:40px}
+  .fn-bottom{display:block}
+  .fn-phone{margin-bottom:22px}
+  .footer{display:block;text-align:center}
+  .footer span{display:block;margin-bottom:6px}
+  .ws-visual{width:85vw;aspect-ratio:4/5}
+  .ws-bracket{width:30px;height:30px}
+}
+
+/* Osoby z wyłączonymi animacjami w systemie */
+@media (prefers-reduced-motion:reduce){
+  .grain{animation:none}
+  *,*::before,*::after{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<!-- INTRO (pokazuje się raz na wizytę) -->
+<div id="intro" aria-hidden="true">
+  <div class="in-top">STANISŁAW KNUL</div>
+  <div class="in-box">
+    <i class="in-c in-tl"></i><i class="in-c in-tr"></i><i class="in-c in-bl"></i><i class="in-c in-br"></i>
+    <i class="in-af"></i>
+  </div>
+  <div class="in-hud">
+    <span>1/200</span>
+    <span>f/2.8</span>
+    <div class="in-meter">
+      <div class="in-scale"><span style="left:0">−3</span><span style="left:16.66%">−2</span><span style="left:33.33%">−1</span><span style="left:50%">0</span><span style="left:66.66%">+1</span><span style="left:83.33%">+2</span><span style="left:100%">+3</span></div>
+      <div class="in-ticks"><i class="in-needle"></i></div>
+    </div>
+    <span>ISO 3200</span>
+  </div>
+  <div class="in-flash"></div>
+</div>
+
+<div class="ambient">
+  <div class="ambient-layer imprezy"></div>
+  <div class="ambient-layer rocznice"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="curtain" aria-hidden="true"></div>
+
+<nav class="nav">
+  <a class="logo" href="#top">STANISŁAW KNUL</a>
+  <div class="navlinks">
+    <a href="#imprezy">Imprezy</a>
+    <a href="#rocznice">Rocznice</a>
+    <a href="#about">O mnie</a>
+    <a href="#finale">Kontakt</a>
+  </div>
+</nav>
+
+<div class="site">
+
+<section class="hero" id="top" tabindex="-1">
+  <div class="hero-bg">
+    <div class="hero-move">
+      <div class="hero-expo">
+        <img class="hero-frame main" src="assets/hero.jpg" alt="Stanisław Knul — fotografia imprez i rocznic" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+    <div class="hero-blink"></div>
+  </div>
+  <div class="hero-hud" aria-hidden="true"><i></i><span>SERIA <b>01/10</b></span></div>
+  <div class="hero-inner">
+    <div class="hero-kicker reveal"><i></i>Stanisław Knul — Fotograf, Łódź</div>
+    <h1 class="hero-title reveal">
+      <span class="line-a">Fotografuję ludzi,</span>
+      <span class="line-b">momenty i emocje.</span>
+      <!-- Alternatywne hasło (podmień obie linijki, jeśli chcesz):
+      <span class="line-a">Parkiet do trzeciej.</span>
+      <span class="line-b">Wspomnienie na pięćdziesiąt lat.</span> -->
+    </h1>
+    <p class="hero-sub reveal">Imprezy, rocznice i jubileusze — bez sztucznego ustawiania i bez przeszkadzania w tym, co dzieje się naprawdę. Jestem tam, gdzie warto być z aparatem, i staram się uchwycić to tak, żeby po latach nadal coś znaczyło.</p>
+    <div class="hero-ctas reveal">
+      <a class="hero-cta" href="#imprezy">Imprezy →</a>
+      <a class="hero-cta" href="#rocznice">Rocznice →</a>
+    </div>
+  </div>
+  <div class="hero-meta-bottom mono reveal">Łódź, woj. łódzkie<br>Fotografia na terenie całego województwa</div>
+</section>
+
+<section id="imprezy" class="section" tabindex="-1">
+  <div class="section-top reveal">
+    <div>
+      <div class="section-eyebrow mono">01 — Flagowa specjalizacja</div>
+      <h2>Imprezy</h2>
+    </div>
+  </div>
+  <p class="section-intro reveal">Energia, która nie stoi w miejscu. Reportaż z jednego wieczoru – od pierwszych świateł na parkiecie, aż po absolutny finał.</p>
+
+  <!-- NOC NA OSI CZASU: zdjęcia przewijają się w dół, zegar z boku liczy godziny ze zdjęć -->
+  <div class="noc">
+    <aside class="noc-aside" aria-hidden="true">
+      <div class="noc-clock"></div>
+      <div class="noc-ruler"><span class="line"></span><span class="fill"></span><span class="head"></span></div>
+    </aside>
+    <div class="noc-list" id="grid-imprezy"></div>
+  </div>
+</section>
+
+<!-- KINOWY WIZJER (środek) -->
+<section id="wizjer" class="wizjer-seq">
+  <div class="ws-container">
+    <div class="ws-texts">
+      <div class="ws-text ws-text-1">Są momenty, które uderzają<br>z pełną mocą...</div>
+      <div class="ws-text ws-text-2">...i takie, w których najważniejsza<br>jest cisza.</div>
+    </div>
+    <div class="ws-visual">
+      <div class="ws-frame">
+        <img class="ws-img ws-img-1" src="assets/wizjer_impreza.jpg" alt="" loading="lazy" decoding="async">
+        <img class="ws-img ws-img-2" src="assets/wizjer_rocznica.jpg" alt="" loading="lazy" decoding="async">
+        <div class="ws-bracket ws-tl"></div>
+        <div class="ws-bracket ws-tr"></div>
+        <div class="ws-bracket ws-bl"></div>
+        <div class="ws-bracket ws-br"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rocznice" class="section" tabindex="-1">
+  <div class="section-top reveal">
+    <div>
+      <div class="section-eyebrow mono">02 — Rocznice &amp; jubileusze</div>
+      <h2>Rocznice i jubileusze</h2>
+    </div>
+  </div>
+  <p class="section-intro reveal">Mniej ludzi, więcej znaczenia. Intymna opowieść o chwilach, spojrzeniach i gestach, które znają się od lat.</p>
+  <div class="grid" id="grid-rocznice"></div>
+</section>
+
+<section id="about" class="section" tabindex="-1">
+  <div class="section-top reveal">
+    <div class="section-eyebrow mono">O mnie</div>
+  </div>
+  <div class="about-wrap">
+    <div class="about-img g-media">
+      <div class="g-par"><img src="assets/portret.jpg" alt="Stanisław Knul" loading="lazy" decoding="async"></div>
+      <span class="g-slit"></span>
+    </div>
+    <div class="about-copy">
+      <p class="reveal">Nazywam się Stanisław Knul. Fotografuję na terenie <strong>województwa łódzkiego</strong> — przede wszystkim imprezy oraz rocznice i jubileusze.</p>
+      <p class="reveal">To dwie moje główne specjalizacje. Moje portfolio traktuję jak starannie wyselekcjonowaną wystawę, do której trafiają tylko te kadry, które naprawdę opowiadają historię.</p>
+      <p class="reveal">W fotografii zależy mi na naturalności. Obserwuję, co dzieje się wokół, reaguję na moment i staram się uchwycić emocje bez sztucznego ustawiania.</p>
+      <p class="reveal">Pracuję na <strong>nowoczesnym, profesjonalnym i niezawodnym sprzęcie</strong>, dzięki czemu mogę skupić się na fotografowaniu i reagować wtedy, kiedy dzieje się coś ważnego.</p>
+      <p class="reveal">Jeśli podoba Ci się mój kinowy, reportażowy sposób patrzenia na fotografię, chętnie porozmawiam o Twoim wydarzeniu.</p>
+    </div>
+  </div>
+</section>
+
+<section id="finale" class="finale-seq" tabindex="-1">
+  <div class="fn-wrapper">
+    <div class="section-eyebrow mono reveal">Kontakt</div>
+    <h2 class="fn-title reveal">Porozmawiajmy<br>o Twoim <em>wieczorze.</em></h2>
+    <div class="fn-bottom reveal">
+      <a class="fn-phone" href="tel:+48535832217">+48 535 832 217</a>
+      <div class="fn-links" id="fn-links"></div>
+    </div>
+  </div>
+</section>
+
+<div class="footer"><span>© 2026 Stanisław Knul Photography</span><span>Łódź · Polska</span></div>
+
+</div>
+
+<div class="fn-toast" role="status" aria-live="polite"></div>
+
+<!-- BIBLIOTEKI -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+<script src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
+
+<script>
+(function(){
+'use strict';
+
+/* ==================== USTAWIENIA (to możesz edytować) ==================== */
+
+const KONTAKT = {
+  email: '',      // np. 'kontakt@twojadomena.pl' — dopóki puste, e-mail się nie pokazuje
+  instagram: '',  // np. 'https://www.instagram.com/twoj_profil'
+  facebook: ''    // np. 'https://www.facebook.com/twoj_profil'
+};
+
+// Godziny w "tag" (GG:MM, po kolei) sterują zegarem nocy.
+const IMPREZY = [
+  { file: '01.jpg', tag: '22:30', title: 'Początek' },
+  { file: '02.jpg', tag: '23:45', title: 'Parkiet' },
+  { file: '03.jpg', tag: '01:15', title: 'Energia' },
+  { file: '04.jpg', tag: '03:00', title: 'Finał' }
+];
+
+const ROCZNICE = [
+  { file: '01.jpg', tag: 'Rozdział I',   title: 'Spotkanie' },
+  { file: '02.jpg', tag: 'Rozdział II',  title: 'Światło' },
+  { file: '03.jpg', tag: 'Rozdział III', title: 'Bliskość' },
+  { file: '04.jpg', tag: 'Rozdział IV',  title: 'Czas' }
+];
+
+// Seria zdjęć do intro: assets/seria/01.jpg, 02.jpg ... (brakujące pliki są pomijane)
+const SERIA = { folder: 'assets/seria/', liczba: 10, rozszerzenie: '.jpg' };
+
+/* ======================================================================== */
+
+const d = document, html = d.documentElement;
+const q = (s, c) => (c || d).querySelector(s);
+const qa = (s, c) => Array.from((c || d).querySelectorAll(s));
+const pad = n => String(n).padStart(2, '0');
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+/* ---------- 1. Treść (działa także bez animacji) ---------- */
+
+function mediaHTML(src, alt, extra){
+  return `<div class="g-media"><div class="g-par"><img src="${src}" alt="${esc(alt)}" loading="lazy" decoding="async"></div><span class="g-slit"></span>${extra || ''}</div>`;
+}
+
+q('#grid-imprezy').innerHTML = IMPREZY.map(it => `
+  <a href="assets/imprezy/${it.file}" class="noc-panel glightbox" data-gallery="galeria-imprezy" data-title="${esc(it.tag + ' — ' + it.title)}">
+    <span class="noc-time">${esc(it.tag)}</span>
+    ${mediaHTML('assets/imprezy/' + it.file, 'Impreza, ' + it.tag + ' — ' + it.title)}
+    <span class="noc-title">${esc(it.title)}</span>
+  </a>`).join('');
+
+q('#grid-rocznice').innerHTML = ROCZNICE.map(it => `
+  <a href="assets/rocznice/${it.file}" class="roc-item glightbox" data-gallery="galeria-rocznice" data-title="${esc(it.tag + ' — ' + it.title)}">
+    ${mediaHTML('assets/rocznice/' + it.file, it.tag + ' — ' + it.title, `<span class="g-tag">${esc(it.tag)}</span><span class="g-title">${esc(it.title)}</span>`)}
+  </a>`).join('');
+
+// Kontakt: e-mail (kopiuje się po kliknięciu) + profile
+const toastEl = q('.fn-toast');
+let toastT;
+function toast(msg){
+  toastEl.textContent = msg; toastEl.classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('show'), 2200);
+}
+const links = q('#fn-links');
+if(KONTAKT.email){
+  const a = d.createElement('a');
+  a.href = 'mailto:' + KONTAKT.email; a.textContent = KONTAKT.email;
+  a.addEventListener('click', () => {
+    if(navigator.clipboard) navigator.clipboard.writeText(KONTAKT.email).then(() => toast('Adres skopiowany ✓')).catch(() => {});
+  });
+  links.appendChild(a);
+}
+[['Instagram', KONTAKT.instagram], ['Facebook', KONTAKT.facebook]].forEach(([name, url]) => {
+  if(!url) return;
+  const a = d.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = name;
+  links.appendChild(a);
+});
+
+/* ---------- 2. Biblioteki ---------- */
+
+let lenis = null;
+function initLightbox(){
+  if(!window.GLightbox) return;
+  const lb = GLightbox({ touchNavigation: true, loop: true, zoomable: true });
+  lb.on('open', () => lenis && lenis.stop());
+  lb.on('close', () => lenis && lenis.start());
+}
+
+if(!(window.gsap && window.ScrollTrigger)){
+  html.classList.remove('js', 'intro');
+  html.classList.add('static');
+  initLightbox();
+  window.__skReady = true;
+  return;
+}
+
+gsap.registerPlugin(ScrollTrigger);
+if(window.SplitText) gsap.registerPlugin(SplitText);
+
+if(RM) html.classList.remove('js', 'intro');   // bez animacji: wszystko widoczne od razu
+
+if(!RM && window.Lenis){
+  lenis = new Lenis({ duration: 1.15, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t * 1000));
+  gsap.ticker.lagSmoothing(0);
+}
+
+const fontsReady = Promise.race([d.fonts ? d.fonts.ready : Promise.resolve(), wait(2500)]);
+
+/* ---------- 3. Narzędzia animacji ---------- */
+
+// Litery / słowa wyjeżdżają spod niewidocznej krawędzi
+function prepRise(el, by){
+  if(!el) return () => gsap.timeline();
+  let split = null, targets;
+  gsap.set(el, { autoAlpha: 1 });
+  if(window.SplitText){
+    split = by === 'chars'
+      ? SplitText.create(el, { type: 'words,chars', wordsClass: 'sw', charsClass: 'sc' })
+      : SplitText.create(el, { type: 'lines,words', linesClass: 'sl', wordsClass: 'swd', tag: 'span' });
+    targets = by === 'chars' ? split.chars : split.words;
+    gsap.set(targets, { yPercent: 165 });
+  } else {
+    targets = [el];
+    gsap.set(el, { y: 40, opacity: 0 });
+  }
+  return (vars) => gsap.to(targets, Object.assign({
+    yPercent: 0, y: 0, opacity: 1, duration: 1.15, ease: 'expo.out',
+    stagger: by === 'chars' ? .024 : .055,
+    onComplete(){ if(split) split.revert(); }
+  }, vars || {}));
+}
+
+// Migawka: kadr odsłania się jak migawka szczelinowa, z krótkim prześwietleniem
+function shutter(item, o){
+  const m = q('.g-media', item) || item, slit = q('.g-slit', item), img = q('img', item);
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo(m, { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: o.dur, ease: o.ease });
+  if(slit) tl.fromTo(slit, { top: '0%', autoAlpha: 1 }, { top: '100%', duration: o.dur, ease: o.ease }, 0)
+             .to(slit, { autoAlpha: 0, duration: .25 }, o.dur - .05);
+  if(img) tl.fromTo(img, { filter: 'brightness(1.85) contrast(.85)' }, { filter: 'brightness(1) contrast(1)', duration: o.dur * 1.3, ease: 'power2.out', clearProps: 'filter' }, o.dur * .35);
+  if(o.extra && o.extra.length) tl.fromTo(o.extra, { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: .8, ease: 'power3.out', stagger: .08 }, o.dur * .45);
+  const play = () => tl.play();
+  ScrollTrigger.create(Object.assign({ onEnter: play, onEnterBack: play, onLeave: play }, o.st));
+  return tl;
+}
+
+/* ---------- 4. Imprezy i wizjer ---------- */
+
+// IMPREZY: noc na osi czasu — zwykłe przewijanie w dół, zegar z boku liczy godziny ze zdjęć
+(function initNoc(){
+  const list = q('.noc-list'), panels = qa('.noc-panel'), aside = q('.noc-aside');
+  const clock = q('.noc-clock'), ruler = q('.noc-ruler');
+  if(!list || !panels.length) return;
+
+  // Godziny ze zdjęć → minuty rosnąco (po północy dodajemy dobę)
+  const valid = IMPREZY.every(it => /^\d{1,2}:\d{2}$/.test(it.tag));
+  let prev = -Infinity;
+  const times = valid ? IMPREZY.map(it => {
+    const [h, m] = it.tag.split(':').map(Number);
+    let t = h * 60 + m;
+    while(t < prev) t += 1440;
+    prev = t; return t;
+  }) : [];
+
+  if(valid){
+    const tStart = times[0] - 30, tEnd = times[times.length - 1];
+    const r0 = Math.floor(tStart / 60) * 60, r1 = Math.max(Math.ceil(tEnd / 60) * 60, r0 + 60);
+    const fmt = t => { const m = ((Math.round(t) % 1440) + 1440) % 1440; return pad(Math.floor(m / 60)) + pad(m % 60); };
+    clock.innerHTML = '<span class="d"></span><span class="d"></span><span class="c">:</span><span class="d"></span><span class="d"></span>';
+    const digits = qa('.d', clock);
+    for(let h = r0; h <= r1; h += 60){
+      const s = d.createElement('span'); s.className = 'hr';
+      s.style.setProperty('--at', (h - r0) / (r1 - r0));
+      s.textContent = fmt(h).slice(0, 2) + ':00';
+      ruler.appendChild(s);
+    }
+    const marks = times.map(t => {
+      const s = d.createElement('span'); s.className = 'mark';
+      s.style.setProperty('--at', (t - r0) / (r1 - r0));
+      ruler.appendChild(s); return s;
+    });
+
+    // Punkty odniesienia: gdy środek zdjęcia jest na środku ekranu, zegar pokazuje jego godzinę
+    let anchors = [];
+    const computeAnchors = () => {
+      const vh = window.innerHeight, sy = window.scrollY;
+      const pts = panels.map((p, i) => {
+        const r = q('.g-media', p).getBoundingClientRect();
+        return [r.top + sy + r.height / 2 - vh / 2, times[i]];
+      });
+      anchors = [[pts[0][0] - vh * .6, tStart]].concat(pts);
+    };
+    const timeAt = y => {
+      if(y <= anchors[0][0]) return anchors[0][1];
+      for(let i = 1; i < anchors.length; i++){
+        const [y0, t0] = anchors[i - 1], [y1, t1] = anchors[i];
+        if(y <= y1) return y1 === y0 ? t1 : t0 + (t1 - t0) * (y - y0) / (y1 - y0);
+      }
+      return tEnd;
+    };
+    let lastM = null, hitT;
+    const render = y => {
+      if(!anchors.length) return;
+      const m = Math.round(timeAt(y));
+      if(m === lastM) return;
+      const s = fmt(m);
+      digits.forEach((el, i) => { if(el.textContent !== s[i]) el.textContent = s[i]; });
+      ruler.style.setProperty('--k', gsap.utils.clamp(0, 1, (m - r0) / (r1 - r0)));
+      marks.forEach((mk, i) => mk.classList.toggle('on', m >= times[i]));
+      if(lastM !== null && times.some(t => (lastM < t && t <= m) || (m <= t && t < lastM))){
+        clock.classList.add('hit'); clearTimeout(hitT);
+        hitT = setTimeout(() => clock.classList.remove('hit'), 420);
+      }
+      lastM = m;
+    };
+    computeAnchors(); render(window.scrollY);
+    ScrollTrigger.addEventListener('refresh', () => { computeAnchors(); lastM = null; render(window.scrollY); });
+    ScrollTrigger.create({ trigger: '.noc', start: 'top bottom', end: 'bottom top', onUpdate: self => render(self.scroll()) });
+  } else {
+    aside.remove();
+    q('.noc').style.gridTemplateColumns = '1fr';
+  }
+
+  if(RM) return;
+  panels.forEach(p => {
+    shutter(p, { dur: .8, ease: 'power3.inOut', extra: [q('.noc-time', p), q('.noc-title', p)], st: { trigger: p, start: 'top 82%' } });
+    gsap.fromTo(q('.g-par', p), { yPercent: -6 }, { yPercent: 6, ease: 'none',
+      scrollTrigger: { trigger: p, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+})();
+
+// WIZJER: przejście z energii imprezy w ciszę rocznicy
+(function initWizjer(){
+  // Środkowanie przez xPercent/yPercent, żeby GSAP nie „zamroził” przesunięcia w pikselach
+  gsap.set('.ws-visual, .ws-text', { xPercent: -50, yPercent: -50, x: 0, y: 0 });
+  if(RM){
+    gsap.set('.ws-visual', { opacity: 1 });
+    gsap.set('.ws-text-1', { opacity: 1 });
+    return;
+  }
+  const tl = gsap.timeline({
+    scrollTrigger: { trigger: '#wizjer', start: 'center center', end: () => '+=' + Math.round(window.innerHeight * 2.6), scrub: 1.2, pin: true, invalidateOnRefresh: true }
+  });
+  gsap.set('.ws-visual', { scale: .7, opacity: 0, y: 150 });
+  gsap.set('.ws-img-2', { filter: 'blur(20px)', scale: 1.1 });
+  tl.to('.ws-visual', { scale: 1, opacity: 1, y: 0, duration: 2, ease: 'power2.out' })
+    .to('.ws-text-1', { opacity: 1, y: -20, duration: 1.5 }, '-=0.5')
+    .to({}, { duration: 1 })
+    .to('.ws-text-1', { opacity: 0, y: -40, duration: 1.5 })
+    .to('.ws-img-1', { filter: 'blur(25px) grayscale(80%)', scale: 1.1, duration: 2.5 }, '-=1.5')
+    .addLabel('zmiana')
+    .to('.ws-img-2', { opacity: 1, duration: 2 }, 'zmiana')
+    .to('.ws-img-1', { opacity: 0, duration: 2 }, 'zmiana')
+    .to('.ws-frame', { borderColor: 'rgba(211,164,102,0.25)', background: 'rgba(211,164,102,0.03)', duration: 2 }, 'zmiana')
+    .to('.ws-bracket', { borderColor: 'rgba(211,164,102,0.7)', duration: 2 }, 'zmiana')
+    .to('.ws-img-2', { filter: 'blur(0px)', scale: 1, duration: 2.5 }, '-=0.5')
+    .to('.ws-text-2', { opacity: 1, y: -20, duration: 1.5 }, '-=0.5')
+    .to({}, { duration: 1.5 })
+    .to('.ws-text-2', { opacity: 0, y: -40, duration: 1.5 })
+    .to('.ws-visual', { scale: 1.1, opacity: 0, duration: 2 }, '-=1');
+})();
+
+/* ---------- 5. Nastrój sekcji (tło) ---------- */
+
+['imprezy', 'rocznice'].forEach(id => {
+  const layer = q('.ambient-layer.' + id);
+  const on = () => { layer.classList.add('is-active'); d.body.setAttribute('data-theme', id); };
+  const off = () => { layer.classList.remove('is-active'); if(d.body.getAttribute('data-theme') === id) d.body.removeAttribute('data-theme'); };
+  ScrollTrigger.create({ trigger: '#' + id, start: 'top 60%', end: 'bottom 40%', onEnter: on, onEnterBack: on, onLeave: off, onLeaveBack: off });
+});
+
+/* ---------- 6. Nawigacja: kinowe cięcie + naprawiony skok ---------- */
+
+const curtain = q('.curtain');
+function jumpTo(target){
+  if(lenis) lenis.scrollTo(target === 'top' ? 0 : target, { immediate: true, offset: target === 'top' ? 0 : -50, force: true });
+  else window.scrollTo(0, target === 'top' ? 0 : target.getBoundingClientRect().top + window.scrollY - 50);
+  ScrollTrigger.update();
+  if(target !== 'top' && target.focus) target.focus({ preventScroll: true });
+}
+qa('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const href = a.getAttribute('href');
+  const target = href === '#top' ? 'top' : q(href);
+  if(!target) return;
+  e.preventDefault();
+  if(RM){ jumpTo(target); return; }
+  gsap.to(curtain, { autoAlpha: 1, duration: .4, ease: 'power2.inOut', overwrite: true, onComplete(){
+    jumpTo(target);
+    gsap.to(curtain, { autoAlpha: 0, duration: .6, delay: .08, ease: 'power2.inOut' });
+  }});
+}));
+
+/* ---------- 7. Pojawianie się treści ---------- */
+
+if(!RM){
+  // Teksty sekcji (każdy element ma własny wyzwalacz)
+  const revealEls = qa('.reveal').filter(el => !el.closest('.hero') && !el.closest('.finale-seq'));
+  gsap.set(revealEls, { y: 36 });
+  const show = batch => {
+    batch = batch.filter(el => !el._shown);
+    if(!batch.length) return;
+    batch.forEach(el => { el._shown = true; });
+    gsap.to(batch, { autoAlpha: 1, y: 0, duration: 1, ease: 'power3.out', stagger: .1 });
+    batch.forEach(el => { const h = q('h2', el); if(h && h._play) h._play({ delay: .12 }); });
+  };
+  ScrollTrigger.batch(revealEls, { start: 'top 88%', onEnter: show, onEnterBack: show, onLeave: show });
+  fontsReady.then(() => {
+    const hi = q('#imprezy .section-top h2'), hr = q('#rocznice .section-top h2');
+    if(hi && !hi.closest('.section-top')._shown) hi._play = prepRise(hi, 'chars');
+    if(hr && !hr.closest('.section-top')._shown) hr._play = prepRise(hr, 'words');
+  });
+
+  // Rocznice: wolniejsza, ciepła migawka
+  qa('.roc-item').forEach(item => {
+    shutter(item, { dur: 1.5, ease: 'power2.inOut', st: { trigger: item, start: 'top 82%' } });
+    gsap.fromTo(q('.g-par', item), { yPercent: -6 }, { yPercent: 6, ease: 'none',
+      scrollTrigger: { trigger: item, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+
+  // Portret
+  const about = q('.about-img');
+  shutter(about, { dur: 1.3, ease: 'power2.inOut', st: { trigger: about, start: 'top 80%' } });
+  gsap.fromTo(q('.g-par', about), { yPercent: -6 }, { yPercent: 6, ease: 'none',
+    scrollTrigger: { trigger: about, start: 'top bottom', end: 'bottom top', scrub: true } });
+
+  // Kontakt: pojawia się zawsze, także po kliknięciu „Kontakt” w menu
+  const fnTitle = q('.fn-title'), fnRest = qa('.finale-seq .section-eyebrow, .fn-bottom');
+  gsap.set(fnRest, { y: 30 });
+  let fnDone = false;
+  fontsReady.then(() => { if(!fnDone) fnTitle._play = prepRise(fnTitle, 'words'); });
+  const fin = () => {
+    if(fnDone) return; fnDone = true;
+    gsap.to(fnRest, { autoAlpha: 1, y: 0, duration: 1, ease: 'power3.out', stagger: .15, delay: .2 });
+    if(fnTitle._play) fnTitle._play({ stagger: .07 }); else gsap.to(fnTitle, { autoAlpha: 1, duration: .8 });
+  };
+  ScrollTrigger.create({ trigger: '#finale', start: 'top 70%', onEnter: fin, onEnterBack: fin, onLeave: fin });
+
+  // Telefon lekko przyciąga się do kursora
+  if(FINE){
+    const ph = q('.fn-phone');
+    const xTo = gsap.quickTo(ph, 'x', { duration: .6, ease: 'power3' }), yTo = gsap.quickTo(ph, 'y', { duration: .6, ease: 'power3' });
+    ph.addEventListener('mousemove', e => { const r = ph.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * .22); yTo((e.clientY - r.top - r.height / 2) * .35); });
+    ph.addEventListener('mouseleave', () => { xTo(0); yTo(0); });
+  }
+
+  // Hero: delikatna głębia przy ruchu myszą i przewijaniu
+  if(FINE){
+    const mx = gsap.quickTo('.hero-move', 'x', { duration: 1.4, ease: 'power3' }), my = gsap.quickTo('.hero-move', 'y', { duration: 1.4, ease: 'power3' });
+    window.addEventListener('mousemove', e => {
+      if(window.scrollY > window.innerHeight) return;
+      mx((e.clientX / window.innerWidth - .5) * -26); my((e.clientY / window.innerHeight - .5) * -18);
+    }, { passive: true });
+  }
+  gsap.to('.hero-bg', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero-inner', { y: -70, opacity: .1, ease: 'none', scrollTrigger: { trigger: '.hero', start: '30% top', end: 'bottom top', scrub: true } });
+}
+
+/* ---------- 8. Hero: intro z błyskiem flesza i serią ---------- */
+
+const hero = {
+  expo: q('.hero-expo'), main: q('.hero-frame.main'), title: q('.hero-title'),
+  lineA: q('.line-a'), lineB: q('.line-b'),
+  rest: qa('.hero-kicker, .hero-sub, .hero-ctas, .hero-meta-bottom')
+};
+let playA, playB;
+function prepHero(){
+  playA = prepRise(hero.lineA, 'chars');
+  playB = prepRise(hero.lineB, 'words');
+  gsap.set(hero.title, { autoAlpha: 1 });
+  gsap.set(hero.rest, { autoAlpha: 0, y: 24 });
+}
+function playHero(){
+  return gsap.timeline()
+    .add(playA({ duration: 1.25 }), 0)
+    .add(playB({ duration: 1.25 }), .3)
+    .to(hero.rest[0], { autoAlpha: 1, y: 0, duration: 1, ease: 'power3.out' }, .1)
+    .to(hero.rest.slice(1), { autoAlpha: 1, y: 0, duration: 1, ease: 'power3.out', stagger: .1 }, .6);
+}
+
+function loadImg(src){
+  return new Promise(res => {
+    const im = new Image();
+    im.onload = () => (im.decode ? im.decode().catch(() => {}) : Promise.resolve()).then(() => res(im));
+    im.onerror = () => res(null);
+    im.src = src;
+  });
+}
+
+function playBurst(frames){
+  const tl = gsap.timeline(), n = frames.length;
+  if(!n) return tl;
+  const blink = q('.hero-blink'), hud = q('.hero-hud'), hudN = q('.hero-hud b'), step = .095;
+  tl.set(hud, { autoAlpha: 1 }, 0).set(hero.main, { autoAlpha: 0 }, 0);
+  frames.forEach((f, i) => {
+    const t = i * step;
+    tl.set(f, { autoAlpha: 1 }, t);
+    if(i) tl.set(frames[i - 1], { autoAlpha: 0 }, t);
+    tl.fromTo(blink, { opacity: .5 }, { opacity: 0, duration: .06, ease: 'none', immediateRender: false }, t);
+    tl.call(() => { hudN.textContent = pad(i + 1) + '/' + pad(n); }, null, t);
+  });
+  const end = n * step;
+  tl.set(hero.main, { autoAlpha: 1 }, end)
+    .set(frames[n - 1], { autoAlpha: 0 }, end)
+    .fromTo(blink, { opacity: .55 }, { opacity: 0, duration: .3, immediateRender: false }, end)
+    .to(hud, { autoAlpha: 0, duration: .5 }, end + .25)
+    .call(() => frames.forEach(f => f.remove()), null, end + .8);
+  return tl;
+}
+
+async function runIntro(){
+  if(lenis) lenis.stop();
+  window.scrollTo(0, 0);
+  const t0 = performance.now();
+  const box = q('.in-box'), needle = q('.in-needle'), flash = q('.in-flash');
+  const srcs = [hero.main.getAttribute('src')].concat(
+    Array.from({ length: SERIA.liczba }, (_, i) => SERIA.folder + pad(i + 1) + SERIA.rozszerzenie));
+
+  // Światłomierz = pasek ładowania: wskazówka idzie od −3 do 0
+  const meter = { v: 0 };
+  const moveNeedle = (v, dur) => gsap.to(meter, { v, duration: dur || .5, ease: 'power2.out', overwrite: true,
+    onUpdate(){ needle.style.left = (meter.v * 50) + '%'; } });
+
+  gsap.fromTo(box, { autoAlpha: 0, scale: 1.18 }, { autoAlpha: 1, scale: 1, duration: 1.1, ease: 'expo.out' });
+  gsap.fromTo('.in-hud, .in-top', { autoAlpha: 0 }, { autoAlpha: 1, duration: .8, delay: .25 });
+  const hunt = gsap.to(box, { scale: 1.035, duration: .5, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 1.1 });
+
+  const loaded = [];
+  let done = 0;
+  const loads = srcs.map((src, i) => loadImg(src).then(im => {
+    loaded[i] = im; done++; moveNeedle(done / srcs.length * .9); return im;
+  }));
+  await Promise.race([Promise.all(loads), wait(4500)]);
+  await fontsReady;
+  const elapsed = performance.now() - t0;
+  if(elapsed < 1500) await wait(1500 - elapsed);
+
+  // Klatki serii (tylko te, które się wczytały)
+  const frames = [];
+  loaded.slice(1).forEach(im => {
+    if(!im) return;
+    const f = d.createElement('img');
+    f.className = 'hero-frame burst'; f.src = im.src; f.alt = ''; f.setAttribute('aria-hidden', 'true');
+    hero.expo.appendChild(f); frames.push(f);
+  });
+
+  prepHero();
+  gsap.set(hero.expo, { autoAlpha: 1 });
+  hunt.kill();
+
+  // Łapanie ostrości
+  const lock = Math.min(Math.min(window.innerWidth, window.innerHeight) * .3, 260);
+  await gsap.timeline()
+    .to(box, { scale: 1, duration: .15 })
+    .add(moveNeedle(1, .35), 0)
+    .to(box, { width: lock, height: lock, duration: .6, ease: 'back.out(2)' }, 0)
+    .call(() => { box.classList.add('lock'); needle.classList.add('lock'); }, null, .45)
+    .to({}, { duration: .3 });
+
+  // BŁYSK
+  gsap.set(flash, { opacity: 1 });
+  gsap.set(['.in-box', '.in-hud', '.in-top'], { autoAlpha: 0 });
+  gsap.set('#intro', { background: 'transparent' });
+  gsap.fromTo(hero.expo, { filter: 'brightness(2.6) contrast(.8)' }, { filter: 'brightness(1) contrast(1)', duration: 1.7, ease: 'power2.out', clearProps: 'filter' });
+  gsap.to(flash, { opacity: 0, duration: 1, ease: 'power2.out', delay: .05, onComplete(){
+    html.classList.remove('intro');
+    try{ sessionStorage.setItem('sk-intro', '1'); }catch(e){}
+    if(lenis) lenis.start();
+    ScrollTrigger.refresh();
+  }});
+
+  // Seria → ląduje na głównym kadrze → wjeżdża tytuł
+  const burstLen = frames.length * .095;
+  playBurst(frames);
+  gsap.fromTo(hero.main, { scale: 1.1 }, { scale: 1, duration: 3, ease: 'expo.out', delay: burstLen });
+  gsap.delayedCall(Math.max(.2, burstLen - .2), playHero);
+}
+
+if(!RM){
+  if(html.classList.contains('intro')){
+    runIntro().catch(() => { html.classList.remove('intro', 'js'); if(lenis) lenis.start(); });
+  } else {
+    fontsReady.then(() => {
+      prepHero();
+      gsap.fromTo(hero.expo, { autoAlpha: 0 }, { autoAlpha: 1, duration: 1.2, ease: 'power2.out' });
+      gsap.fromTo(hero.main, { scale: 1.12 }, { scale: 1, duration: 2.6, ease: 'expo.out' });
+      playHero().delay(.15);
+    });
+  }
+}
+
+/* ---------- 9. Na koniec ---------- */
+
+initLightbox();
+fontsReady.then(() => ScrollTrigger.refresh());
+window.addEventListener('load', () => ScrollTrigger.refresh());
+window.__skReady = true;
+
+})();
+</script>
+</body>
+</html>
